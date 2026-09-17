@@ -132,7 +132,7 @@ The rule engine shows its work: every risk factor carries a severity, a
 description, and structured evidence. Positive signals are shown
 alongside so the report presents a balanced picture.
 
-![Risk factors and positive signals](screenshots/07-risk-factors.png)
+![Risk factors and positive signals](screenshots/07-feature-vector-suspicious.png)
 
 ### ML service API documentation
 
