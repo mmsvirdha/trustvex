@@ -1,0 +1,27 @@
+{
+  "inspectedAt": "2026-09-16T16:26:32.287891+00:00",
+  "source": "Kaggle taruntiwarihp/phishing-site-urls",
+  "sourcePage": "https://www.kaggle.com/datasets/taruntiwarihp/phishing-site-urls",
+  "file": {
+    "path": "raw\\kaggle-phishing-site-urls.csv",
+    "sizeBytes": 31567326,
+    "sha256": "b1a7c26b354632c80817e10af154c4e5007f9480fb43a8ac2730491500fa2780"
+  },
+  "columns": [
+    "URL",
+    "Label"
+  ],
+  "totalLines": 549361,
+  "validRows": 549346,
+  "invalidRows": 15,
+  "labelCounts": {
+    "bad": 156422,
+    "good": 392924
+  },
+  "parsingStrategy": "Split each line at the LAST comma. This handles URLs that contain commas in their path or query string. The label is always the substring after the final comma and must be exactly 'good' or 'bad'; anything else is counted as invalid and skipped.",
+  "notes": [
+    "Labels are inherited from the Kaggle dataset and are NOT independently verified by TRUSTVEX.",
+    "The 'good' class is referred to as 'labeled non-phishing (per source)' in all downstream artifacts.",
+    "The 'bad' class is referred to as 'labeled phishing (per source)' in all downstream artifacts."
+  ]
+}

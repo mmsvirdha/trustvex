@@ -1,0 +1,96 @@
+{
+  "modelVersion": "trustvex-url-rf-v1",
+  "featureSchemaVersion": "1.0",
+  "trainedAt": "2026-09-16T17:44:23.741611+00:00",
+  "algorithm": "sklearn.ensemble.RandomForestClassifier",
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": null,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "featureNames": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "subdomain_count",
+    "digit_count",
+    "special_char_count",
+    "has_ip_hostname",
+    "has_punycode",
+    "has_embedded_credentials",
+    "has_unusual_port",
+    "suspicious_keyword_count"
+  ],
+  "featureCount": 12,
+  "inputDataset": {
+    "path": "datasets\\derived\\prepared.parquet",
+    "rows": 40000,
+    "trainRows": 27193,
+    "valRows": 6345,
+    "testRows": 6462
+  },
+  "classBalance": {
+    "train": {
+      "label_0": 13039,
+      "label_1": 14154
+    },
+    "val": {
+      "label_0": 3407,
+      "label_1": 2938
+    },
+    "test": {
+      "label_0": 3554,
+      "label_1": 2908
+    }
+  },
+  "validationMetrics": {
+    "n": 6345,
+    "positive_class_count": 2938,
+    "negative_class_count": 3407,
+    "true_positives": 2149,
+    "false_positives": 774,
+    "true_negatives": 2633,
+    "false_negatives": 789,
+    "precision": 0.7352035579883681,
+    "recall": 0.7314499659632403,
+    "f1": 0.7333219587101177,
+    "roc_auc": 0.8331993475172148
+  },
+  "testMetrics": {
+    "n": 6462,
+    "positive_class_count": 2908,
+    "negative_class_count": 3554,
+    "true_positives": 2108,
+    "false_positives": 1346,
+    "true_negatives": 2208,
+    "false_negatives": 800,
+    "precision": 0.6103068905616676,
+    "recall": 0.7248968363136176,
+    "f1": 0.6626846903489468,
+    "roc_auc": 0.7737104248927338
+  },
+  "featureImportances": {
+    "digit_count": 0.209635627137535,
+    "path_length": 0.18151655259050337,
+    "url_length": 0.17207135616232802,
+    "suspicious_keyword_count": 0.1348065423372416,
+    "hostname_length": 0.13366765828560484,
+    "query_length": 0.06335946407302474,
+    "subdomain_count": 0.0511303016166422,
+    "special_char_count": 0.03523262379971112,
+    "has_ip_hostname": 0.018411417861602945,
+    "has_punycode": 0.00016845613580626135,
+    "has_embedded_credentials": 0.0,
+    "has_unusual_port": 0.0
+  },
+  "labelProvenance": "Labels are inherited from the Kaggle phishing-site-urls dataset. TRUSTVEX does NOT independently verify them.",
+  "knownLimitations": [
+    "Model sees only 12 URL-string features. It has no visibility into TLS, DNS, redirects, page content, or reputation.",
+    "Evaluation is grouped-by-registrable-domain, which tests generalization to unseen domains \u2014 NOT temporal generalization to future URLs.",
+    "Tranco was not used; the benign class comes from the same Kaggle dataset as the phishing class.",
+    "Hyperparameters are fixed; no tuning was performed."
+  ]
+}

@@ -1,0 +1,20 @@
+# Raw and derived datasets must never be committed.
+# Reproducibility comes from the download + prepare scripts, not from
+# storing the data itself.
+
+*.csv
+*.csv.gz
+*.parquet
+*.npz
+*.joblib
+*.pickle
+*.jsonl
+*.manifest.json
+raw/
+derived/
+
+# Keep these tracked
+!sources.json
+!README.md
+!FEATURE_CONTRACT.md
+!.gitignore

@@ -1,0 +1,48 @@
+{
+  "datasetVersion": "1.0",
+  "schemaVersion": "1.0",
+  "recordedAt": "2026-09-16",
+  "source": {
+    "name": "Kaggle — taruntiwarihp/phishing-site-urls",
+    "pageUrl": "https://www.kaggle.com/datasets/taruntiwarihp/phishing-site-urls",
+    "accessedVia": "manual browser download",
+    "format": "CSV",
+    "claimedColumns": ["URL", "Label"],
+    "claimedLabelValues": {
+      "good": "non-phishing (source-provided label)",
+      "bad": "phishing (source-provided label)"
+    },
+    "claimedRowCount": "~507,000 (per Kaggle page, not independently verified at write time)",
+    "claimedClassBalance": "~72% good / ~28% bad (per Kaggle page, not independently verified at write time)",
+    "provenance": "Third-party curated dataset. Label semantics and label quality are inherited from the dataset. TRUSTVEX does NOT independently verify these labels.",
+    "license": "See the Kaggle dataset page for the license declared by the uploader. If the license is unclear, treat the dataset as research-use only and do not redistribute.",
+    "usageDecision": "Raw data is excluded from version control. Used locally for training the TRUSTVEX URL-Risk Model v1. The pipeline records the actual file hash and row counts at prepare time, so the manifest reflects reality rather than the source's advertised statistics."
+  },
+  "classMapping": {
+    "positiveClass": {
+      "datasetLabel": "bad",
+      "trustvexLabel": 1,
+      "semantic": "labeled phishing (per source, not independently verified by TRUSTVEX)"
+    },
+    "negativeClass": {
+      "datasetLabel": "good",
+      "trustvexLabel": 0,
+      "semantic": "labeled non-phishing (per source, not independently verified by TRUSTVEX)",
+      "terminologyWarning": "Do NOT refer to these as 'verified benign' or 'confirmed safe' in any output, log, or report."
+    }
+  },
+  "notUsed": [
+    {
+      "source": "URLhaus",
+      "reason": "Indexes malware-distribution URLs, not phishing URLs. Used as a live reputation provider in the scanner, but 'no result' is never treated as a benign label."
+    },
+    {
+      "source": "Tranco",
+      "reason": "Popularity ranking, not a ground-truth benign label set. Not used in v1 to avoid mixing methodologies and because the Kaggle dataset already provides both classes."
+    },
+    {
+      "source": "PhishTank",
+      "reason": "Registration for new accounts is currently disabled. Would have been the preferred phishing class source; kept in mind as a future external validation set."
+    }
+  ]
+}

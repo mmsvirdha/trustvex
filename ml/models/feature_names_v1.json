@@ -1,0 +1,14 @@
+[
+  "url_length",
+  "hostname_length",
+  "path_length",
+  "query_length",
+  "subdomain_count",
+  "digit_count",
+  "special_char_count",
+  "has_ip_hostname",
+  "has_punycode",
+  "has_embedded_credentials",
+  "has_unusual_port",
+  "suspicious_keyword_count"
+]
